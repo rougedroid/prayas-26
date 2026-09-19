@@ -9,9 +9,10 @@ from config import (
     ZONE_TO_ID,
     HIDDEN_DIM,
     DROPOUT,
+    MODEL_FILE
 )
 
-from neo4j.loader import Neo4jLoader
+from neo4j_interface.loader import Neo4jLoader
 
 from graph.features import (
     extract_static_matrix,
@@ -173,6 +174,7 @@ def main():
         training_states=training_states,
         static_features=static_features,
         num_zones=len(ZONE_TYPES),
+        checkpoint_path = "models/model1"
     )
 
     # -------------------------
