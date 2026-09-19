@@ -245,3 +245,6 @@ backend/pipeline/datasets/
 # frontend's source library code tracked.
 !frontend/src/lib/
 !frontend/src/lib/**
+
+venv/
+venv
