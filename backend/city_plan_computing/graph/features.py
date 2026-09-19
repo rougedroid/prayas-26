@@ -1,12 +1,13 @@
 import json
 import numpy as np
 
-
 CONTINUOUS_FEATURES = [
     "population",
     "green_cover",
     "elevation",
     "distance_to_boundary",
+    "x",
+    "y",
 ]
 
 
@@ -30,21 +31,19 @@ def encode_zone(zone, zone_to_id):
 
 
 def extract_static_matrix(cells):
-    matrix = np.array(
+    matrix = np.array([
         [
-            [
-                float(cell["population"] or 0.0),
-                float(cell["green_cover"] or 0.0),
-                float(cell["elevation"] or 0.0),
-                float(cell["distance_to_boundary"] or 0.0),
-            ]
-            for cell in cells
-        ],
-        dtype=np.float32,
-    )
+            float(cell["population"] or 0.0),
+            float(cell["green_cover"] or 0.0),
+            float(cell["elevation"] or 0.0),
+            float(cell["distance_to_boundary"] or 0.0),
+            float(cell["x"] or 0.0),
+            float(cell["y"] or 0.0),
+        ]
+        for cell in cells
+    ], dtype=np.float32)
 
     return matrix
-
 
 def fit_normalization(matrix):
     mean = matrix.mean(axis=0)

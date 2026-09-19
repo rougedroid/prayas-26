@@ -4,21 +4,42 @@ from pathlib import Path
 # Neo4j
 # -------------------------
 
-NEO4J_URI = "bolt://localhost:7687"
+NEO4J_URI = "neo4j://localhost:7687"
 NEO4J_USERNAME = "neo4j"
-NEO4J_PASSWORD = "YOUR_PASSWORD"
-NEO4J_DATABASE = "neo4j"
+NEO4J_PASSWORD = "password"
+NEO4J_DATABASE = "stockholm"
 
 
 # -------------------------
 # Zones
 # -------------------------
+"""
+"Residential"
+2
+"Industrial"
+3
+"Civic"
+4
+"Agricultural"
+5
+"Commercial"
+6
+"Office"
+7
+"Utility"
+8
+"Green"
 
+"""
 ZONE_TYPES = [
     "residential",
-    "commercial",
+    "civic",
     "industrial",
-    "park",
+    "green",
+    "offices",
+    "utility",
+    "commercial",
+    "agricultural"
 ]
 
 ZONE_TO_ID = {

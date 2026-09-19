@@ -1,0 +1,6 @@
+neo4j
+torch
+torch-geometric
+numpy
+scikit-learn
+tqdm

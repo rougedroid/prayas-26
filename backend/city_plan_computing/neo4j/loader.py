@@ -22,17 +22,19 @@ class Neo4jLoader:
     def load_cells(self):
         query = """
         MATCH (c:Cell)
-        OPTIONAL MATCH (c)-[:ADJACENT]-(n:Cell)
+        OPTIONAL MATCH (c)-[:ADJACENT]-(n)
 
         RETURN
-            c.id AS id,
+            c.cell_id AS id,
             c.population AS population,
             c.type AS type,
-            c.green_cover AS green_cover,
-            c.elevation AS elevation,
-            c.distance_to_boundary AS distance_to_boundary,
-            collect(DISTINCT n.id) AS neighbors
-        ORDER BY c.id
+            c.green_cover_pct AS green_cover,
+            c.elevation_m AS elevation,
+            c.dist_to_boundary_m AS distance_to_boundary,
+            c.x AS x,
+            c.y AS y,
+            collect(DISTINCT n.cell_id) AS neighbors
+        ORDER BY c.cell_id
         """
 
         records, _, _ = self.driver.execute_query(
@@ -40,10 +42,7 @@ class Neo4jLoader:
             database_=self.database,
         )
 
-        return [
-            record.data()
-            for record in records
-        ]
+        return [record.data() for record in records]
 
     def close(self):
         self.driver.close()
