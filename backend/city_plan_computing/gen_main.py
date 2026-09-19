@@ -38,11 +38,15 @@ from models.generator import (
 
 from training.train import (
     train_model,
+    print_generation_metrics,
 )
 
 from generation.generator import (
     CityGeneratorEngine,
 )
+
+
+CHECKPOINT_PATH = "models/model2"
 
 
 def main():
@@ -143,17 +147,26 @@ def main():
     # Model
     # -------------------------
 
-    # Static features:
-    # 4 continuous features.
+    # Input = static features (whatever the pipeline produced)
+    #       + dynamic features:
+    #           assigned              = 1
+    #           zone one-hot          = num_zones
+    #           neighbor assigned     = 1
+    #           neighbor same-zone    = 1
+    #           neighbor unassigned   = 1
     #
-    # Dynamic:
-    # assigned              = 1
-    # zone one-hot          = num_zones
-    # neighbor assigned     = 1
-    # neighbor same-zone    = 1
-    # neighbor unassigned   = 1
+    # Taken from static_features.shape[1] so it can never
+    # drift out of sync with the feature extractor.
 
-    input_dim = 6 + 1 + len(ZONE_TYPES) + 3
+    static_dim = static_features.shape[1]
+
+    input_dim = static_dim + 1 + len(ZONE_TYPES) + 3
+
+    print(
+        f"Input dim: {input_dim} "
+        f"(static {static_dim} + dynamic "
+        f"{1 + len(ZONE_TYPES) + 3})"
+    )
 
     model = CityGenerator(
         input_dim=input_dim,
@@ -168,13 +181,17 @@ def main():
     # Train
     # -------------------------
 
+    # normalization is saved into the checkpoint so
+    # test_newcity.py can reuse the TRAINING statistics.
+
     model = train_model(
         model=model,
         graph=graph,
         training_states=training_states,
         static_features=static_features,
         num_zones=len(ZONE_TYPES),
-        checkpoint_path = "models/model1"
+        checkpoint_path=CHECKPOINT_PATH,
+        normalization=normalization,
     )
 
     # -------------------------
@@ -186,6 +203,9 @@ def main():
         if torch.cuda.is_available()
         else "cpu"
     )
+
+    model = model.to(device)
+    model.eval()
 
     engine = CityGeneratorEngine(
         model=model,
@@ -207,6 +227,43 @@ def main():
         f"Assigned cells: "
         f"{(generated_zones >= 0).sum().item()}"
     )
+
+    # -------------------------
+    # Real generation accuracy
+    # -------------------------
+
+    actual_zones = torch.tensor(
+        zone_assignments,
+        dtype=torch.long,
+    )
+
+    print_generation_metrics(
+        generated_zones,
+        actual_zones,
+        ZONE_TYPES,
+    )
+
+    zone_sizes = []
+
+    for entry in log:
+
+        if entry["action"] == "START_ZONE":
+            zone_sizes.append(1)
+
+        elif (
+            entry["action"] == "EXPAND"
+            and zone_sizes
+        ):
+            zone_sizes[-1] += 1
+
+    if zone_sizes:
+
+        print(
+            f"Zones generated: {len(zone_sizes)} | "
+            f"largest: {max(zone_sizes)} | "
+            f"mean size: "
+            f"{sum(zone_sizes) / len(zone_sizes):.1f}"
+        )
 
 
 if __name__ == "__main__":

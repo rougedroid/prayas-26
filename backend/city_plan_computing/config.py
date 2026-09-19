@@ -8,7 +8,7 @@ NEO4J_URI = "neo4j://localhost:7687"
 NEO4J_USERNAME = "neo4j"
 NEO4J_PASSWORD = "password"
 # NEO4J_DATABASE = "stockholm"
-NEO4J_DATABASE = "london"
+NEO4J_DATABASE = "stockholm"
 
 # -------------------------
 # Zones
