@@ -1,52 +1,43 @@
 import torch
-
 from config import (
+    CITY_ID,
+    DROPOUT,
+    HIDDEN_DIM,
+    NEO4J_DATABASE,
+    NEO4J_PASSWORD,
     NEO4J_URI,
     NEO4J_USERNAME,
-    NEO4J_PASSWORD,
-    NEO4J_DATABASE,
-    ZONE_TYPES,
+    # Keep this derived from the shared feature list as grid attributes evolve.
+    # A density-observed flag distinguishes an unavailable building layer from 0% coverage.
+    # The model is trained from scratch, so input width is not persisted between runs.
     ZONE_TO_ID,
-    HIDDEN_DIM,
-    DROPOUT,
-    MODEL_FILE
+    ZONE_TYPES,
 )
-
-from neo4j_interface.loader import Neo4jLoader
-
+from generation.generator import (
+    CityGeneratorEngine,
+)
 from graph.features import (
+    CONTINUOUS_FEATURES,
     extract_static_matrix,
     fit_normalization,
     normalize_matrix,
 )
-
 from graph.pyg_graph import (
     build_pyg_graph,
 )
-
-from training.build_sequences import (
-    build_city_sequence,
-)
-
-from training.dataset import (
-    create_training_states,
-)
-
 from models.generator import (
     CityGenerator,
 )
-
+from neo4j_interface.loader import Neo4jLoader
+from training.build_sequences import (
+    build_city_sequence,
+)
+from training.dataset import (
+    create_training_states,
+)
 from training.train import (
     train_model,
-    print_generation_metrics,
 )
-
-from generation.generator import (
-    CityGeneratorEngine,
-)
-
-
-CHECKPOINT_PATH = "models/model2"
 
 
 def main():
@@ -59,24 +50,17 @@ def main():
         NEO4J_PASSWORD,
         NEO4J_DATABASE,
     ) as loader:
+        cells = loader.load_cells(CITY_ID)
 
-        cells = loader.load_cells()
-
-    print(
-        f"Loaded {len(cells)} cells"
-    )
+    print(f"Loaded {len(cells)} cells for {CITY_ID}")
 
     # -------------------------
     # Normalization
     # -------------------------
 
-    static_raw = extract_static_matrix(
-        cells
-    )
+    static_raw = extract_static_matrix(cells)
 
-    normalization = fit_normalization(
-        static_raw
-    )
+    normalization = fit_normalization(static_raw)
 
     static_normalized = normalize_matrix(
         static_raw,
@@ -98,27 +82,17 @@ def main():
         ZONE_TO_ID,
     )
 
-    print(
-        f"Nodes: {graph.num_nodes}"
-    )
+    print(f"Nodes: {graph.num_nodes}")
 
-    print(
-        f"Edges: {graph.edge_index.shape[1]}"
-    )
+    print(f"Edges: {graph.edge_index.shape[1]}")
 
-    print(
-        f"Static features: "
-        f"{graph.x.shape[1]}"
-    )
+    print(f"Static features: {graph.x.shape[1]}")
 
     # -------------------------
     # Training sequence
     # -------------------------
 
-    zone_assignments = [
-        ZONE_TO_ID[cell["type"]]
-        for cell in cells
-    ]
+    zone_assignments = [ZONE_TO_ID[cell["type"]] for cell in cells]
 
     sequence = build_city_sequence(
         zone_assignments,
@@ -126,47 +100,30 @@ def main():
         len(ZONE_TYPES),
     )
 
-    print(
-        f"Training actions: "
-        f"{len(sequence)}"
+    print(f"Training actions: {len(sequence)}")
+
+    training_states = create_training_states(
+        sequence,
+        graph.num_nodes,
     )
 
-    training_states = (
-        create_training_states(
-            sequence,
-            graph.num_nodes,
-        )
-    )
-
-    print(
-        f"Training states: "
-        f"{len(training_states)}"
-    )
+    print(f"Training states: {len(training_states)}")
 
     # -------------------------
     # Model
     # -------------------------
 
-    # Input = static features (whatever the pipeline produced)
-    #       + dynamic features:
-    #           assigned              = 1
-    #           zone one-hot          = num_zones
-    #           neighbor assigned     = 1
-    #           neighbor same-zone    = 1
-    #           neighbor unassigned   = 1
+    # Static features:
+    # Continuous features are defined with the Neo4j-to-model schema in graph.features.
     #
-    # Taken from static_features.shape[1] so it can never
-    # drift out of sync with the feature extractor.
+    # Dynamic:
+    # assigned              = 1
+    # zone one-hot          = num_zones
+    # neighbor assigned     = 1
+    # neighbor same-zone    = 1
+    # neighbor unassigned   = 1
 
-    static_dim = static_features.shape[1]
-
-    input_dim = static_dim + 1 + len(ZONE_TYPES) + 3
-
-    print(
-        f"Input dim: {input_dim} "
-        f"(static {static_dim} + dynamic "
-        f"{1 + len(ZONE_TYPES) + 3})"
-    )
+    input_dim = 6 + 1 + len(ZONE_TYPES) + 3
 
     model = CityGenerator(
         input_dim=input_dim,
@@ -181,31 +138,19 @@ def main():
     # Train
     # -------------------------
 
-    # normalization is saved into the checkpoint so
-    # test_newcity.py can reuse the TRAINING statistics.
-
     model = train_model(
         model=model,
         graph=graph,
         training_states=training_states,
         static_features=static_features,
         num_zones=len(ZONE_TYPES),
-        checkpoint_path=CHECKPOINT_PATH,
-        normalization=normalization,
     )
 
     # -------------------------
     # Generate
     # -------------------------
 
-    device = torch.device(
-        "cuda"
-        if torch.cuda.is_available()
-        else "cpu"
-    )
-
-    model = model.to(device)
-    model.eval()
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
     engine = CityGeneratorEngine(
         model=model,
@@ -215,55 +160,11 @@ def main():
         device=device,
     )
 
-    generated_zones, log = (
-        engine.generate()
-    )
+    generated_zones, log = engine.generate()
 
-    print(
-        "Generation complete."
-    )
+    print("Generation complete.")
 
-    print(
-        f"Assigned cells: "
-        f"{(generated_zones >= 0).sum().item()}"
-    )
-
-    # -------------------------
-    # Real generation accuracy
-    # -------------------------
-
-    actual_zones = torch.tensor(
-        zone_assignments,
-        dtype=torch.long,
-    )
-
-    print_generation_metrics(
-        generated_zones,
-        actual_zones,
-        ZONE_TYPES,
-    )
-
-    zone_sizes = []
-
-    for entry in log:
-
-        if entry["action"] == "START_ZONE":
-            zone_sizes.append(1)
-
-        elif (
-            entry["action"] == "EXPAND"
-            and zone_sizes
-        ):
-            zone_sizes[-1] += 1
-
-    if zone_sizes:
-
-        print(
-            f"Zones generated: {len(zone_sizes)} | "
-            f"largest: {max(zone_sizes)} | "
-            f"mean size: "
-            f"{sum(zone_sizes) / len(zone_sizes):.1f}"
-        )
+    print(f"Assigned cells: {(generated_zones >= 0).sum().item()}")
 
 
 if __name__ == "__main__":
