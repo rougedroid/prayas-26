@@ -33,9 +33,9 @@ TRAIN_DATABASES = ["tokyo", "amsterdam","stockholm", "london"]
 # best epoch. Keep the city you finally audit OUT of both lists.
 # (If it is Amsterdam, move it out of VAL before the final audit run
 # is trusted, or add another city here.)
-VAL_DATABASES = ["barcelona"]
+VAL_DATABASES = ["barcelona", "copenhagen"]
 
-CHECKPOINT_PATH = "models/zoner1"
+CHECKPOINT_PATH = "models/zoner_changed_params"
 
 # Static-feature handling to compare. The best one on VAL is kept.
 #   context = ignore static features, use only surrounding zones
@@ -52,17 +52,17 @@ PASSES_PER_CITY = 4
 ZONER_HIDDEN = 64
 ZONER_DROPOUT = 0.3
 
-LEARNING_RATE = 1e-3
-WEIGHT_DECAY = 1e-2
+LEARNING_RATE = 1e-4
+WEIGHT_DECAY = 5e-2
 
 MASK_RANGE = (0.10, 0.30)     # fraction of cells hidden per pass
 STATIC_NOISE = 0.10
-STATIC_BLOCK_DROP = 0.5       # chance the whole static block is zeroed
-LABEL_SMOOTHING = 0.0
-CLASS_WEIGHT_POWER = 0.0      # 0 = none. Weighting hurt accuracy before.
+STATIC_BLOCK_DROP = 0.3       # chance the whole static block is zeroed
+LABEL_SMOOTHING = 0.2
+CLASS_WEIGHT_POWER = 0.3      # 0 = none. Weighting hurt accuracy before.
 
 EVAL_EVERY = 5
-PATIENCE_EVALS = 100
+PATIENCE_EVALS = 1000
 
 SEED = 0
 

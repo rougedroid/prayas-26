@@ -1,0 +1,176 @@
+index,cell_id,actual_zone,suggested_zone,suggested_confidence,actual_probability,gap,neighbours
+48,ghsl_9558_cell_00048,Residential,Civic,0.8864,0.0162,0.8701,Civicx1
+64,ghsl_9558_cell_00064,Civic,Residential,0.8864,0.0162,0.8701,Residentialx1
+94,ghsl_9558_cell_00094,Green,Residential,0.8864,0.0162,0.8701,Residentialx1
+122,ghsl_9558_cell_00122,Civic,Residential,0.8864,0.0162,0.8701,Residentialx2
+123,ghsl_9558_cell_00123,Civic,Residential,0.8864,0.0162,0.8701,Residentialx2
+183,ghsl_9558_cell_00183,Industrial,Residential,0.8864,0.0162,0.8701,Residentialx4
+296,ghsl_9558_cell_00296,Commercial,Industrial,0.8864,0.0162,0.8701,Industrialx4
+492,ghsl_9558_cell_00492,Industrial,Residential,0.8864,0.0162,0.8701,Residentialx4
+497,ghsl_9558_cell_00497,Civic,Residential,0.8864,0.0162,0.8701,Residentialx4
+551,ghsl_9558_cell_00551,Office,Residential,0.8864,0.0162,0.8701,Residentialx4
+874,ghsl_9558_cell_00874,Civic,Residential,0.8864,0.0162,0.8701,Residentialx4
+912,ghsl_9558_cell_00912,Utility,Residential,0.8864,0.0162,0.8701,Residentialx1
+973,ghsl_9558_cell_00973,Residential,Industrial,0.8864,0.0162,0.8701,Industrialx2
+67,ghsl_9558_cell_00067,Green,Residential,0.8574,0.0204,0.837,Residentialx4
+368,ghsl_9558_cell_00368,Civic,Residential,0.8574,0.0204,0.837,Residentialx4
+520,ghsl_9558_cell_00520,Industrial,Residential,0.8574,0.0204,0.837,Residentialx4
+602,ghsl_9558_cell_00602,Industrial,Residential,0.8574,0.0204,0.837,Residentialx4
+736,ghsl_9558_cell_00736,Residential,Civic,0.8574,0.0204,0.837,Civicx4
+840,ghsl_9558_cell_00840,Commercial,Residential,0.8574,0.0204,0.837,Residentialx4
+906,ghsl_9558_cell_00906,Civic,Residential,0.8574,0.0204,0.837,Residentialx4
+925,ghsl_9558_cell_00925,Industrial,Residential,0.8574,0.0204,0.837,Residentialx4
+219,ghsl_9558_cell_00219,Civic,Residential,0.8284,0.0245,0.8039,Residentialx4
+436,ghsl_9558_cell_00436,Industrial,Residential,0.8284,0.0245,0.8039,Residentialx4
+461,ghsl_9558_cell_00461,Commercial,Residential,0.8284,0.0245,0.8039,Residentialx4
+478,ghsl_9558_cell_00478,Civic,Residential,0.8284,0.0245,0.8039,Residentialx4
+695,ghsl_9558_cell_00695,Commercial,Residential,0.8284,0.0245,0.8039,Residentialx4
+18,ghsl_9558_cell_00018,Residential,Industrial,0.8118,0.0269,0.7849,Industrialx2
+42,ghsl_9558_cell_00042,Office,Residential,0.8118,0.0269,0.7849,Residentialx4
+112,ghsl_9558_cell_00112,Civic,Residential,0.8118,0.0269,0.7849,Residentialx4
+135,ghsl_9558_cell_00135,Residential,Civic,0.8118,0.0269,0.7849,Civicx2
+214,ghsl_9558_cell_00214,Industrial,Residential,0.8118,0.0269,0.7849,Residentialx2
+458,ghsl_9558_cell_00458,Industrial,Residential,0.8118,0.0269,0.7849,Residentialx4
+938,ghsl_9558_cell_00938,Civic,Residential,0.8118,0.0269,0.7849,Residentialx2
+1004,ghsl_9558_cell_01004,Civic,Industrial,0.8118,0.0269,0.7849,Industrialx2
+47,ghsl_9558_cell_00047,Civic,Residential,0.8009,0.0284,0.7725,Residentialx3
+849,ghsl_9558_cell_00849,Commercial,Residential,0.8009,0.0284,0.7725,Residentialx3
+263,ghsl_9558_cell_00263,Civic,Residential,0.7995,0.0286,0.7708,Residentialx4
+308,ghsl_9558_cell_00308,Commercial,Residential,0.7995,0.0286,0.7708,Residentialx4
+313,ghsl_9558_cell_00313,Civic,Residential,0.7995,0.0286,0.7708,Residentialx4
+836,ghsl_9558_cell_00836,Commercial,Residential,0.7995,0.0286,0.7708,Residentialx4
+915,ghsl_9558_cell_00915,Industrial,Residential,0.7995,0.0286,0.7708,Residentialx4
+489,ghsl_9558_cell_00489,Civic,Residential,0.7828,0.031,0.7518,Residentialx4
+101,ghsl_9558_cell_00101,Civic,Residential,0.7582,0.0345,0.7237,Residentialx3
+780,ghsl_9558_cell_00780,Residential,Office,0.7582,0.0345,0.7237,Officex3
+92,ghsl_9558_cell_00092,Civic,Residential,0.7539,0.0352,0.7187,Residentialx4
+486,ghsl_9558_cell_00486,Civic,Residential,0.7539,0.0352,0.7187,Residentialx4
+515,ghsl_9558_cell_00515,Civic,Residential,0.7539,0.0352,0.7187,Residentialx4
+440,ghsl_9558_cell_00440,Industrial,Residential,0.7372,0.0375,0.6997,Residentialx2
+706,ghsl_9558_cell_00706,Industrial,Residential,0.7372,0.0375,0.6997,Residentialx2
+343,ghsl_9558_cell_00343,Commercial,Residential,0.7367,0.0376,0.699,Residentialx3
+414,ghsl_9558_cell_00414,Civic,Residential,0.7367,0.0376,0.699,Residentialx3
+2,ghsl_9558_cell_00002,Civic,Residential,0.7341,0.038,0.6961,Residentialx1
+77,ghsl_9558_cell_00077,Civic,Residential,0.7341,0.038,0.6961,Residentialx1
+118,ghsl_9558_cell_00118,Industrial,Residential,0.715,0.0356,0.6794,"Residentialx3, Utilityx1"
+954,ghsl_9558_cell_00954,Commercial,Office,0.715,0.0356,0.6794,"Officex3, Residentialx1"
+538,ghsl_9558_cell_00538,Civic,Industrial,0.7062,0.0352,0.671,"Industrialx3, Residentialx1"
+558,ghsl_9558_cell_00558,Commercial,Residential,0.7062,0.0352,0.671,"Residentialx3, Officex1"
+348,ghsl_9558_cell_00348,Industrial,Residential,0.6973,0.0347,0.6626,"Residentialx3, Commercialx1"
+752,ghsl_9558_cell_00752,Residential,Industrial,0.6973,0.0347,0.6626,"Industrialx3, Officex1"
+759,ghsl_9558_cell_00759,Residential,Civic,0.715,0.0714,0.6436,"Civicx3, Residentialx1"
+899,ghsl_9558_cell_00899,Utility,Residential,0.6694,0.0421,0.6273,"Residentialx3, Commercialx1"
+942,ghsl_9558_cell_00942,Utility,Residential,0.6673,0.0411,0.6262,"Residentialx3, Officex1"
+111,ghsl_9558_cell_00111,Residential,Civic,0.7062,0.0829,0.6233,"Civicx3, Residentialx1"
+145,ghsl_9558_cell_00145,Industrial,Residential,0.7062,0.0829,0.6233,"Residentialx3, Industrialx1"
+853,ghsl_9558_cell_00853,Civic,Residential,0.7062,0.0829,0.6233,"Residentialx3, Civicx1"
+248,ghsl_9558_cell_00248,Civic,Residential,0.6585,0.0406,0.6178,"Residentialx3, Industrialx1"
+726,ghsl_9558_cell_00726,Industrial,Residential,0.6585,0.0406,0.6178,"Residentialx3, Utilityx1"
+871,ghsl_9558_cell_00871,Utility,Residential,0.6585,0.0406,0.6178,"Residentialx3, Civicx1"
+93,ghsl_9558_cell_00093,Residential,Civic,0.6627,0.0482,0.6145,Civicx2
+113,ghsl_9558_cell_00113,Residential,Civic,0.6627,0.0482,0.6145,Civicx2
+114,ghsl_9558_cell_00114,Civic,Residential,0.6627,0.0482,0.6145,Residentialx2
+350,ghsl_9558_cell_00350,Industrial,Residential,0.6496,0.0402,0.6094,"Residentialx3, Commercialx1"
+352,ghsl_9558_cell_00352,Utility,Residential,0.6496,0.0402,0.6094,"Residentialx3, Commercialx1"
+405,ghsl_9558_cell_00405,Office,Residential,0.6496,0.0402,0.6094,"Residentialx3, Commercialx1"
+455,ghsl_9558_cell_00455,Commercial,Civic,0.6496,0.0402,0.6094,"Civicx3, Residentialx1"
+575,ghsl_9558_cell_00575,Industrial,Civic,0.6496,0.0402,0.6094,"Civicx3, Residentialx1"
+189,ghsl_9558_cell_00189,Civic,Residential,0.6973,0.0944,0.6029,"Residentialx3, Civicx1"
+553,ghsl_9558_cell_00553,Industrial,Residential,0.6973,0.0944,0.6029,"Residentialx3, Industrialx1"
+26,ghsl_9558_cell_00026,Agricultural,Residential,0.6261,0.0435,0.5826,"Residentialx2, Civicx1"
+204,ghsl_9558_cell_00204,Civic,Residential,0.6673,0.0863,0.581,"Residentialx3, Civicx1"
+510,ghsl_9558_cell_00510,Civic,Residential,0.6673,0.0863,0.581,"Residentialx3, Civicx1"
+744,ghsl_9558_cell_00744,Residential,Civic,0.6673,0.0863,0.581,"Civicx3, Residentialx1"
+859,ghsl_9558_cell_00859,Industrial,Residential,0.6673,0.0863,0.581,"Residentialx3, Industrialx1"
+304,ghsl_9558_cell_00304,Commercial,Residential,0.6217,0.0476,0.5741,"Residentialx3, Civicx1"
+582,ghsl_9558_cell_00582,Utility,Commercial,0.6128,0.0471,0.5657,"Commercialx3, Civicx1"
+55,ghsl_9558_cell_00055,Industrial,Residential,0.6107,0.0461,0.5646,"Residentialx3, Civicx1"
+207,ghsl_9558_cell_00207,Commercial,Residential,0.6107,0.0461,0.5646,"Residentialx3, Industrialx1"
+333,ghsl_9558_cell_00333,Civic,Residential,0.6107,0.0461,0.5646,"Residentialx3, Industrialx1"
+376,ghsl_9558_cell_00376,Residential,Industrial,0.6107,0.0461,0.5646,"Industrialx3, Civicx1"
+474,ghsl_9558_cell_00474,Commercial,Residential,0.6107,0.0461,0.5646,"Residentialx3, Civicx1"
+425,ghsl_9558_cell_00425,Civic,Residential,0.6585,0.0978,0.5607,"Residentialx3, Civicx1"
+631,ghsl_9558_cell_00631,Office,Residential,0.6585,0.0978,0.5607,"Residentialx3, Officex1"
+632,ghsl_9558_cell_00632,Residential,Office,0.6585,0.0978,0.5607,"Officex3, Residentialx1"
+747,ghsl_9558_cell_00747,Office,Residential,0.6585,0.0978,0.5607,"Residentialx3, Officex1"
+543,ghsl_9558_cell_00543,Commercial,Civic,0.6054,0.0453,0.5601,"Civicx3, Residentialx1"
+456,ghsl_9558_cell_00456,Civic,Residential,0.6019,0.0457,0.5562,"Residentialx3, Commercialx1"
+722,ghsl_9558_cell_00722,Civic,Residential,0.6019,0.0457,0.5562,"Residentialx3, Utilityx1"
+832,ghsl_9558_cell_00832,Civic,Residential,0.6019,0.0457,0.5562,"Residentialx3, Commercialx1"
+676,ghsl_9558_cell_00676,Residential,Industrial,0.6305,0.0813,0.5492,"Industrialx3, Residentialx1"
+149,ghsl_9558_cell_00149,Residential,Civic,0.6496,0.1092,0.5404,"Civicx3, Residentialx1"
+259,ghsl_9558_cell_00259,Civic,Residential,0.6496,0.1092,0.5404,"Residentialx3, Civicx1"
+523,ghsl_9558_cell_00523,Industrial,Residential,0.6496,0.1092,0.5404,"Residentialx3, Industrialx1"
+903,ghsl_9558_cell_00903,Industrial,Residential,0.6496,0.1092,0.5404,"Residentialx3, Industrialx1"
+597,ghsl_9558_cell_00597,Residential,Office,0.6231,0.1001,0.523,"Officex3, Residentialx1"
+81,ghsl_9558_cell_00081,Civic,Residential,0.5818,0.0597,0.5221,Residentialx1
+823,ghsl_9558_cell_00823,Office,Residential,0.6196,0.1011,0.5184,"Residentialx3, Officex1"
+877,ghsl_9558_cell_00877,Office,Residential,0.5686,0.0522,0.5164,"Residentialx3, Industrialx1"
+147,ghsl_9558_cell_00147,Industrial,Civic,0.563,0.05,0.513,"Civicx2, Residentialx1"
+104,ghsl_9558_cell_00104,Residential,Civic,0.5661,0.0538,0.5123,"Civicx3, Utilityx1"
+31,ghsl_9558_cell_00031,Industrial,Residential,0.5577,0.0507,0.5069,"Residentialx3, Greenx1"
+997,ghsl_9558_cell_00997,Commercial,Industrial,0.5577,0.0507,0.5069,"Industrialx3, Residentialx1"
+175,ghsl_9558_cell_00175,Commercial,Civic,0.5542,0.0511,0.503,"Civicx3, Residentialx1"
+209,ghsl_9558_cell_00209,Commercial,Residential,0.5542,0.0511,0.503,"Residentialx3, Industrialx1"
+280,ghsl_9558_cell_00280,Industrial,Residential,0.5542,0.0511,0.503,"Residentialx3, Civicx1"
+663,ghsl_9558_cell_00663,Industrial,Residential,0.5542,0.0511,0.503,"Residentialx3, Officex1"
+677,ghsl_9558_cell_00677,Industrial,Residential,0.5542,0.0511,0.503,"Residentialx3, Civicx1"
+730,ghsl_9558_cell_00730,Commercial,Residential,0.5542,0.0511,0.503,"Residentialx3, Officex1"
+399,ghsl_9558_cell_00399,Civic,Residential,0.6107,0.1126,0.4981,"Residentialx3, Civicx1"
+485,ghsl_9558_cell_00485,Residential,Civic,0.5849,0.0878,0.4971,"Civicx3, Residentialx1"
+292,ghsl_9558_cell_00292,Industrial,Residential,0.5463,0.0516,0.4947,"Residentialx2, Civicx1"
+134,ghsl_9558_cell_00134,Civic,Residential,0.6019,0.1241,0.4778,"Residentialx3, Civicx1"
+346,ghsl_9558_cell_00346,Industrial,Residential,0.6019,0.1241,0.4778,"Residentialx3, Industrialx1"
+426,ghsl_9558_cell_00426,Residential,Civic,0.6019,0.1241,0.4778,"Civicx3, Residentialx1"
+525,ghsl_9558_cell_00525,Industrial,Residential,0.6019,0.1241,0.4778,"Residentialx3, Industrialx1"
+596,ghsl_9558_cell_00596,Office,Residential,0.6019,0.1241,0.4778,"Residentialx3, Officex1"
+699,ghsl_9558_cell_00699,Industrial,Residential,0.6019,0.1241,0.4778,"Residentialx3, Industrialx1"
+764,ghsl_9558_cell_00764,Civic,Residential,0.6019,0.1241,0.4778,"Residentialx3, Civicx1"
+833,ghsl_9558_cell_00833,Residential,Civic,0.6019,0.1241,0.4778,"Civicx3, Residentialx1"
+869,ghsl_9558_cell_00869,Civic,Residential,0.6019,0.1241,0.4778,"Residentialx3, Civicx1"
+978,ghsl_9558_cell_00978,Industrial,Residential,0.6019,0.1241,0.4778,"Residentialx3, Industrialx1"
+157,ghsl_9558_cell_00157,Civic,Residential,0.5761,0.0993,0.4768,"Residentialx3, Civicx1"
+565,ghsl_9558_cell_00565,Residential,Industrial,0.6106,0.1348,0.4758,"Industrialx2, Residentialx1"
+675,ghsl_9558_cell_00675,Residential,Industrial,0.5785,0.1153,0.4633,"Industrialx2, Residentialx1"
+718,ghsl_9558_cell_00718,Residential,Utility,0.5754,0.1149,0.4604,"Utilityx3, Residentialx1"
+171,ghsl_9558_cell_00171,Civic,Residential,0.51,0.0562,0.4538,"Residentialx3, Industrialx1"
+402,ghsl_9558_cell_00402,Civic,Residential,0.5651,0.1192,0.446,"Residentialx3, Civicx1"
+659,ghsl_9558_cell_00659,Commercial,Residential,0.5651,0.1192,0.446,"Residentialx3, Commercialx1"
+619,ghsl_9558_cell_00619,Utility,Commercial,0.5665,0.1264,0.4401,"Commercialx3, Utilityx1"
+8,ghsl_9558_cell_00008,Industrial,Residential,0.5951,0.1569,0.4382,"Residentialx2, Industrialx1"
+989,ghsl_9558_cell_00989,Residential,Commercial,0.5951,0.1569,0.4382,"Commercialx2, Residentialx1"
+999,ghsl_9558_cell_00999,Residential,Industrial,0.5951,0.1569,0.4382,"Industrialx2, Residentialx1"
+852,ghsl_9558_cell_00852,Residential,Civic,0.563,0.1275,0.4355,"Civicx3, Residentialx1"
+321,ghsl_9558_cell_00321,Civic,Industrial,0.4843,0.0553,0.4289,"Industrialx2, Residentialx1"
+377,ghsl_9558_cell_00377,Industrial,Residential,0.5577,0.1379,0.4198,"Residentialx3, Industrialx1"
+975,ghsl_9558_cell_00975,Residential,Industrial,0.5577,0.1379,0.4198,"Industrialx3, Residentialx1"
+228,ghsl_9558_cell_00228,Civic,Residential,0.5542,0.139,0.4152,"Residentialx3, Civicx1"
+362,ghsl_9558_cell_00362,Office,Residential,0.5542,0.139,0.4152,"Residentialx3, Officex1"
+428,ghsl_9558_cell_00428,Residential,Civic,0.5542,0.139,0.4152,"Civicx3, Residentialx1"
+537,ghsl_9558_cell_00537,Residential,Civic,0.5542,0.139,0.4152,"Civicx3, Residentialx1"
+802,ghsl_9558_cell_00802,Office,Residential,0.5474,0.1593,0.3881,"Residentialx2, Officex1"
+806,ghsl_9558_cell_00806,Civic,Residential,0.5209,0.1329,0.388,"Residentialx3, Civicx1"
+97,ghsl_9558_cell_00097,Utility,Civic,0.4411,0.0597,0.3814,"Civicx2, Residentialx1, Industrialx1"
+174,ghsl_9558_cell_00174,Civic,Residential,0.4411,0.0597,0.3814,"Residentialx2, Industrialx1, Commercialx1"
+465,ghsl_9558_cell_00465,Civic,Residential,0.5188,0.1413,0.3775,"Residentialx3, Civicx1"
+654,ghsl_9558_cell_00654,Commercial,Civic,0.4322,0.0585,0.3737,"Civicx2, Utilityx1, Residentialx1"
+394,ghsl_9558_cell_00394,Utility,Industrial,0.4234,0.0573,0.3661,"Industrialx2, Residentialx1, Civicx1"
+606,ghsl_9558_cell_00606,Civic,Residential,0.4234,0.0573,0.3661,"Residentialx2, Commercialx1, Industrialx1"
+682,ghsl_9558_cell_00682,Industrial,Civic,0.4234,0.0573,0.3661,"Civicx2, Residentialx1, Utilityx1"
+995,ghsl_9558_cell_00995,Commercial,Residential,0.4188,0.0567,0.3621,"Residentialx1, Industrialx1"
+295,ghsl_9558_cell_00295,Industrial,Residential,0.4145,0.0561,0.3584,"Residentialx2, Commercialx1, Civicx1"
+336,ghsl_9558_cell_00336,Commercial,Residential,0.4145,0.0561,0.3584,"Residentialx2, Civicx1, Officex1"
+337,ghsl_9558_cell_00337,Office,Residential,0.4145,0.0561,0.3584,"Residentialx2, Commercialx1, Civicx1"
+347,ghsl_9558_cell_00347,Residential,Industrial,0.4145,0.0561,0.3584,"Industrialx2, Commercialx1, Civicx1"
+351,ghsl_9558_cell_00351,Commercial,Residential,0.4145,0.0561,0.3584,"Residentialx2, Industrialx1, Utilityx1"
+540,ghsl_9558_cell_00540,Commercial,Residential,0.4145,0.0561,0.3584,"Residentialx2, Industrialx1, Civicx1"
+687,ghsl_9558_cell_00687,Civic,Utility,0.4145,0.0561,0.3584,"Utilityx2, Commercialx1, Residentialx1"
+717,ghsl_9558_cell_00717,Utility,Civic,0.4145,0.0561,0.3584,"Civicx2, Industrialx1, Residentialx1"
+723,ghsl_9558_cell_00723,Utility,Residential,0.4145,0.0561,0.3584,"Residentialx2, Civicx1, Officex1"
+776,ghsl_9558_cell_00776,Industrial,Residential,0.4145,0.0561,0.3584,"Residentialx2, Utilityx1, Civicx1"
+201,ghsl_9558_cell_00201,Civic,Residential,0.51,0.1528,0.3572,"Residentialx3, Civicx1"
+609,ghsl_9558_cell_00609,Residential,Civic,0.51,0.1528,0.3572,"Civicx3, Residentialx1"
+902,ghsl_9558_cell_00902,Industrial,Residential,0.5065,0.1539,0.3526,"Residentialx3, Industrialx1"
+564,ghsl_9558_cell_00564,Industrial,Residential,0.4987,0.1465,0.3523,"Residentialx2, Industrialx1"
+824,ghsl_9558_cell_00824,Residential,Office,0.5319,0.1813,0.3506,"Officex2, Residentialx1"
+825,ghsl_9558_cell_00825,Utility,Residential,0.5319,0.1813,0.3506,"Residentialx2, Utilityx1"

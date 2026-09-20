@@ -17,9 +17,9 @@ from zoner import (
 # SETTINGS
 # ============================================================
 
-AUDIT_DATABASE = "amsterdam"      # or: python audit_city.py <database>
+AUDIT_DATABASE = "copenhagen"      # or: python audit_city.py <database>
 
-CHECKPOINT_PATH = "models/zoner1"
+CHECKPOINT_PATH = "models/zoner_changed_params"
 
 FOLDS = 8          # each cell is hidden together with ~1/FOLDS of the city
 ROUNDS = 5         # random repeats, averaged (more = steadier)
